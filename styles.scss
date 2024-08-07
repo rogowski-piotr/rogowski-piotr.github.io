@@ -1,0 +1,225 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #f5f5f5;
+$text-color: #333;
+$highlight-color: #e74c3c;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global Styles
+body {
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    color: $highlight-color;
+  }
+}
+
+// Hero Section
+#hero {
+  @include flex-center;
+  height: 100vh;
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  color: #fff;
+  text-align: center;
+
+  .hero-title {
+    font-size: 3em;
+    span {
+      color: $highlight-color;
+    }
+  }
+
+  .hero-cta {
+    margin-top: 20px;
+    .cta-btn--hero {
+      background-color: $highlight-color;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      &:hover {
+        background-color: darken($highlight-color, 10%);
+      }
+    }
+  }
+
+  .typing {
+    border-right: .1em solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; // To ensure the element shrinks to fit the content
+    line-height: 1; // This ensures the height is equal to the font-size
+    font-size: 1; // Adjust this as necessary
+    vertical-align: text-bottom; // Align the border with the text
+  }
+
+  .inline-block {
+      display: inline-block;
+  }
+
+  .container {
+      align-items: center;
+  }
+}
+
+// About Section
+#about {
+  padding: 60px 0;
+  .section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: $primary-color;
+  }
+
+  .about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .about-wrapper__image {
+      @include flex-center;
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .about-wrapper__info {
+      margin-top: 20px;
+      .about-wrapper__info-text {
+        margin-bottom: 20px;
+      }
+      .cta-btn--resume {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Projects Section
+#projects {
+  padding: 60px 0;
+  background-color: #fff;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: $secondary-color;
+  }
+
+  .project-wrapper {
+    .row {
+      margin-bottom: 40px;
+
+      .project-wrapper__text {
+        h3 {
+          font-size: 1.8em;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 1em;
+        }
+        .cta-btn {
+          margin-right: 10px;
+          &:hover {
+            color: $highlight-color;
+          }
+        }
+      }
+
+      .project-wrapper__image {
+        img {
+          max-width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+// Contact Section
+#contact {
+  padding: 60px 0;
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: $primary-color;
+  }
+
+  .contact-wrapper {
+    text-align: center;
+
+    .contact-wrapper__text {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn--resume {
+      background-color: $secondary-color;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+// Footer Section
+.footer {
+  background-color: $text-color;
+  color: #fff;
+  padding: 20px 0;
+
+  .back-to-top {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    &:hover {
+      color: $highlight-color;
+    }
+  }
+
+  .social-links {
+    text-align: center;
+    a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5em;
+      &:hover {
+        color: $highlight-color;
+      }
+    }
+  }
+
+  .footer__text {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
