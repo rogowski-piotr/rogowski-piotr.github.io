@@ -27,6 +27,16 @@ a:hover {
 #hero .hero-title {
   font-size: 3em;
 }
+@media (max-width: 768px) {
+  #hero .hero-title {
+    font-size: 2em;
+  }
+}
+@media (max-width: 480px) {
+  #hero .hero-title {
+    font-size: 1.5em;
+  }
+}
 #hero .hero-title span {
   color: #e74c3c;
 }
@@ -42,6 +52,16 @@ a:hover {
 #hero .hero-cta .cta-btn--hero:hover {
   background-color: #d62c1a;
 }
+@media (max-width: 768px) {
+  #hero .hero-cta .cta-btn--hero {
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 480px) {
+  #hero .hero-cta .cta-btn--hero {
+    padding: 6px 12px;
+  }
+}
 #hero .typing {
   border-right: 0.1em solid black;
   white-space: nowrap;
@@ -51,11 +71,27 @@ a:hover {
   font-size: 1;
   vertical-align: text-bottom;
 }
+@media (max-width: 768px) {
+  #hero .typing {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 480px) {
+  #hero .typing {
+    font-size: 0.8em;
+  }
+}
 #hero .inline-block {
   display: inline-block;
 }
 #hero .container {
   align-items: center;
+  padding: 0 20px;
+}
+@media (max-width: 480px) {
+  #hero .container {
+    padding: 0 10px;
+  }
 }
 
 #about {
@@ -97,62 +133,91 @@ a:hover {
   background-color: #217dbb;
 }
 
-#projects {
-  padding: 60px 0;
-  background-color: #fff;
-}
-#projects .section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #2ecc71;
-}
-#projects .project-wrapper .row {
-  margin-bottom: 40px;
-}
-#projects .project-wrapper .row .project-wrapper__text h3 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-}
-#projects .project-wrapper .row .project-wrapper__text p {
-  font-size: 1em;
-}
-#projects .project-wrapper .row .project-wrapper__text .cta-btn {
-  margin-right: 10px;
-}
-#projects .project-wrapper .row .project-wrapper__text .cta-btn:hover {
-  color: #e74c3c;
-}
-#projects .project-wrapper .row .project-wrapper__image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 #contact {
-  padding: 60px 0;
+  background-color: #f9f9f9;
+  padding: 50px 0;
 }
-#contact .section-title {
+#contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+#contact .container .section-title {
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #3498db;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
 }
-#contact .contact-wrapper {
-  text-align: center;
+#contact .container .contact-wrapper {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-#contact .contact-wrapper .contact-wrapper__text {
-  font-size: 1.2em;
+#contact .container .contact-wrapper .contact-form .form-group {
   margin-bottom: 20px;
 }
-#contact .contact-wrapper .cta-btn--resume {
-  background-color: #2ecc71;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+#contact .container .contact-wrapper .contact-form .form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
 }
-#contact .contact-wrapper .cta-btn--resume:hover {
-  background-color: #25a25a;
+#contact .container .contact-wrapper .contact-form .form-group input,
+#contact .container .contact-wrapper .contact-form .form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+#contact .container .contact-wrapper .contact-form .form-group input:focus,
+#contact .container .contact-wrapper .contact-form .form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+#contact .container .contact-wrapper .contact-form .form-group textarea {
+  resize: none;
+}
+#contact .container .contact-wrapper .contact-form .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+#contact .container .contact-wrapper .contact-form .btn:hover {
+  background-color: #0056b3;
+}
+#contact .container .contact-wrapper .contact-wrapper__text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #777;
+}
+#contact .container .contact-wrapper .cta-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #28a745;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+#contact .container .contact-wrapper .cta-btn:hover {
+  background-color: #218838;
 }
 
 .footer {

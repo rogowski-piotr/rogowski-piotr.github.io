@@ -40,6 +40,15 @@ a {
 
   .hero-title {
     font-size: 3em;
+
+    @media (max-width: 768px) {
+      font-size: 2em; // Zmniejszenie rozmiaru tekstu na tabletach
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5em; // Zmniejszenie rozmiaru tekstu na telefonach
+    }
+
     span {
       color: $highlight-color;
     }
@@ -47,33 +56,56 @@ a {
 
   .hero-cta {
     margin-top: 20px;
+
     .cta-btn--hero {
       background-color: $highlight-color;
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
+
       &:hover {
         background-color: darken($highlight-color, 10%);
+      }
+
+      @media (max-width: 768px) {
+        padding: 8px 16px; // Zmniejszenie paddingu na tabletach
+      }
+
+      @media (max-width: 480px) {
+        padding: 6px 12px; // Zmniejszenie paddingu na telefonach
       }
     }
   }
 
   .typing {
-    border-right: .1em solid black;
+    border-right: 0.1em solid black;
     white-space: nowrap;
     overflow: hidden;
-    display: inline-block; // To ensure the element shrinks to fit the content
-    line-height: 1; // This ensures the height is equal to the font-size
-    font-size: 1; // Adjust this as necessary
-    vertical-align: text-bottom; // Align the border with the text
+    display: inline-block; 
+    line-height: 1; 
+    font-size: 1; 
+    vertical-align: text-bottom;
+
+    @media (max-width: 768px) {
+      font-size: 0.9em; // Zmniejszenie font-size na tabletach
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.8em; // Zmniejszenie font-size na telefonach
+    }
   }
 
   .inline-block {
-      display: inline-block;
+    display: inline-block;
   }
 
   .container {
-      align-items: center;
+    align-items: center;
+    padding: 0 20px; // Dodanie paddingu po bokach na urządzeniach mobilnych
+
+    @media (max-width: 480px) {
+      padding: 0 10px; // Zmniejszenie paddingu na telefonach
+    }
   }
 }
 
@@ -116,75 +148,103 @@ a {
   }
 }
 
-// Projects Section
-#projects {
-  padding: 60px 0;
-  background-color: #fff;
+// Contact Section
+#contact {
+  background-color: #f9f9f9;
+  padding: 50px 0;
 
-  .section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: $secondary-color;
-  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
 
-  .project-wrapper {
-    .row {
-      margin-bottom: 40px;
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
 
-      .project-wrapper__text {
-        h3 {
-          font-size: 1.8em;
+    .contact-wrapper {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      .contact-form {
+        .form-group {
           margin-bottom: 20px;
+
+          label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #555;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #333;
+            background-color: #f7f7f7;
+            box-sizing: border-box;  // Dodane box-sizing
+            transition: border-color 0.3s ease;
+
+            &:focus {
+              border-color: #007bff;
+              outline: none;
+            }
+          }
+
+          textarea {
+            resize: none;
+          }
         }
-        p {
-          font-size: 1em;
-        }
-        .cta-btn {
-          margin-right: 10px;
+
+        .btn {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 1.2rem;
+          color: #fff;
+          background-color: #007bff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          text-align: center;
+          transition: background-color 0.3s ease;
+
           &:hover {
-            color: $highlight-color;
+            background-color: #0056b3;
           }
         }
       }
 
-      .project-wrapper__image {
-        img {
-          max-width: 100%;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      .contact-wrapper__text {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1rem;
+        color: #777;
       }
-    }
-  }
-}
 
-// Contact Section
-#contact {
-  padding: 60px 0;
+      .cta-btn {
+        display: block;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: #28a745;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
 
-  .section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: $primary-color;
-  }
-
-  .contact-wrapper {
-    text-align: center;
-
-    .contact-wrapper__text {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    .cta-btn--resume {
-      background-color: $secondary-color;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      &:hover {
-        background-color: darken($secondary-color, 10%);
+        &:hover {
+          background-color: #218838;
+        }
       }
     }
   }
