@@ -34,12 +34,16 @@ a {
 #hero {
   @include flex-center;
   height: 100vh;
+  width: 100%; // Szerokość na 100% okna przeglądarki
   background: linear-gradient(to right, $primary-color, $secondary-color);
   color: #fff;
   text-align: center;
+  overflow: hidden; // Ukryj przewijanie na wszelki wypadek
 
   .hero-title {
     font-size: 3em;
+    transform: translateY(20px); // Przesunięcie w dół
+    transition: opacity 1s ease-out, transform 1s ease-out;
 
     @media (max-width: 768px) {
       font-size: 2em; // Zmniejszenie rozmiaru tekstu na tabletach
@@ -81,9 +85,9 @@ a {
     border-right: 0.1em solid black;
     white-space: nowrap;
     overflow: hidden;
-    display: inline-block; 
-    line-height: 1; 
-    font-size: 1; 
+    display: inline-block;
+    line-height: 1;
+    font-size: 1;
     vertical-align: text-bottom;
 
     @media (max-width: 768px) {
@@ -112,6 +116,22 @@ a {
 // About Section
 #about {
   padding: 60px 0;
+  height: 100vh;
+  width: 100%; // Szerokość na 100% okna przeglądarki
+  overflow: hidden;
+
+  .section-title,
+  .about-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .section-title {
     text-align: center;
     font-size: 2.5em;
@@ -122,6 +142,7 @@ a {
   .about-wrapper {
     display: flex;
     flex-wrap: wrap;
+
     .about-wrapper__image {
       @include flex-center;
       img {
@@ -130,11 +151,14 @@ a {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
     }
+
     .about-wrapper__info {
       margin-top: 20px;
+
       .about-wrapper__info-text {
         margin-bottom: 20px;
       }
+
       .cta-btn--resume {
         background-color: $primary-color;
         color: #fff;
@@ -152,11 +176,26 @@ a {
 #contact {
   background-color: #f9f9f9;
   padding: 50px 0;
+  height: 100vh;
+  width: 100%; // Szerokość na 100% okna przeglądarki
+  overflow: hidden;
 
   .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 15px;
+
+    .section-title,
+    .contact-wrapper {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .section-title {
       text-align: center;
@@ -191,7 +230,7 @@ a {
             font-size: 1rem;
             color: #333;
             background-color: #f7f7f7;
-            box-sizing: border-box;  // Dodane box-sizing
+            box-sizing: border-box;
             transition: border-color 0.3s ease;
 
             &:focus {
@@ -255,6 +294,8 @@ a {
   background-color: $text-color;
   color: #fff;
   padding: 20px 0;
+  width: 100%; // Szerokość na 100% okna przeglądarki
+  overflow: hidden;
 
   .back-to-top {
     display: block;
@@ -268,6 +309,7 @@ a {
 
   .social-links {
     text-align: center;
+
     a {
       color: #fff;
       margin: 0 10px;
@@ -281,5 +323,6 @@ a {
   .footer__text {
     text-align: center;
     margin-top: 20px;
+    transform: translateY(20px);
   }
 }

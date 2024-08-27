@@ -20,12 +20,16 @@ a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
   background: linear-gradient(to right, #3498db, #2ecc71);
   color: #fff;
   text-align: center;
+  overflow: hidden;
 }
 #hero .hero-title {
   font-size: 3em;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 @media (max-width: 768px) {
   #hero .hero-title {
@@ -96,6 +100,20 @@ a:hover {
 
 #about {
   padding: 60px 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+#about .section-title,
+#about .about-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+#about .section-title.visible,
+#about .about-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 #about .section-title {
   text-align: center;
@@ -136,11 +154,25 @@ a:hover {
 #contact {
   background-color: #f9f9f9;
   padding: 50px 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 #contact .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 15px;
+}
+#contact .container .section-title,
+#contact .container .contact-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+#contact .container .section-title.visible,
+#contact .container .contact-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 #contact .container .section-title {
   text-align: center;
@@ -224,6 +256,8 @@ a:hover {
   background-color: #333;
   color: #fff;
   padding: 20px 0;
+  width: 100%;
+  overflow: hidden;
 }
 .footer .back-to-top {
   display: block;
@@ -248,6 +282,7 @@ a:hover {
 .footer .footer__text {
   text-align: center;
   margin-top: 20px;
+  transform: translateY(20px);
 }
 
 /*# sourceMappingURL=styles.css.map */

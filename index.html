@@ -238,5 +238,25 @@
                 });
             });
         </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const sections = document.querySelectorAll('section:not(#hero)');
+
+                function checkVisibility() {
+                    sections.forEach(section => {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            section.querySelectorAll('.section-title, .about-wrapper, .contact-wrapper, .footer__text, .hero-title').forEach(element => {
+                                setTimeout(() => { element.classList.add('visible'); }, 500); 
+                            });
+                        }
+                    });
+                }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Wywołanie na wypadek, gdyby pierwsza sekcja była już widoczna
+        });
+        </script>
     </body>
 </html>
